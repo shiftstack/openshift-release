@@ -10,6 +10,8 @@ ref:
     - name: OS_CLOUD
       default: "openstack"
       documentation: Name of cloud to use from ${SHARED_DIR}/clouds.yaml file
+    - name: CONFIG_TYPE
+      documentation: The type of config for the environment to deploy.
     - name: OPENSTACK_EXTERNAL_NETWORK
       default: ''
       documentation: |-

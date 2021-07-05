@@ -1,9 +1,12 @@
 ref:
+  # TODO(mandre): move this ref to openstack-provision-dnsrecords
   as: openstack-conf-creatednsrecords
   from: openstack-installer
   commands: openstack-conf-creatednsrecords-commands.sh
   env:
     - name: BASE_DOMAIN
+    - name: CONFIG_TYPE
+      documentation: The type of config for the environment to deploy.
   resources:
     requests:
       cpu: 10m

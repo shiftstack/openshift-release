@@ -4,6 +4,11 @@ set -o nounset
 set -o errexit
 set -o pipefail
 
+if [[ "${CONFIG_TYPE}" == "fipless" ]]; then
+    echo "Skipping step due to CONFIG_TYPE being fipless."
+    exit 0
+fi
+
 export OS_CLIENT_CONFIG_FILE=${SHARED_DIR}/clouds.yaml
 CLUSTER_NAME=$(<"${SHARED_DIR}"/CLUSTER_NAME)
 OPENSTACK_EXTERNAL_NETWORK="${OPENSTACK_EXTERNAL_NETWORK:-$(<"${SHARED_DIR}/OPENSTACK_EXTERNAL_NETWORK")}"
